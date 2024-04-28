@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+   
+    "frontend:dev": "nuxt dev --config-file nuxt.config.js -p=3000",
+    "admin:dev": "nuxt dev --config-file admin/nuxt.config.js -p=4000",
+    "dev": "concurrently \"npm run frontend:dev\" \"npm run admin:dev\"",
+    "frontend:build": "nuxt build --config-file nuxt.config.js",
+    "admin:build": "nuxt build --config-file admin/nuxt.config.js",
+    "frontend:start": "nuxt start --config-file nuxt.config.js",
+    "admin:start": "nuxt start --config-file admin/nuxt.config.js",
+    "frontend:serve": "nuxt serve --config-file nuxt.config.js",
+    "admin:serve": "nuxt serve --config-file admin/nuxt.config.js"
+    
+  },
+  "dependencies": {
+    "nuxt": "^3.11.2",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  }
+}
