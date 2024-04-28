@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,9 +16,16 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+//        User::factory()->create([
+//            'name' => 'Admin User',
+//            'email' => 'admin@test.com',
+//            'is_super_admin' => 1,
+//        ]);
+
+
+        \Illuminate\Support\Facades\DB::table('payment_methods')
+            ->insert(array('name' => 'Paypal', 'slug' => 'paypal'));
+        \Illuminate\Support\Facades\DB::table('payment_methods')
+            ->insert(array('name' => 'Pay on delivery', 'slug' => 'cash'));
     }
 }
